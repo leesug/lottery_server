@@ -43,14 +43,14 @@ if (empty($store_id) || empty($password)) {
 
 // 개발 모드에서 테스트 계정 처리
 if (defined('DEVELOPMENT_MODE') && DEVELOPMENT_MODE) {
-    if ($store_id === '123456' && $password === '1234') {
+    if ($store_id === '123456789' && $password === '1234') {
         // 테스트 계정 데이터
         echo json_encode([
             'success' => true,
             'message' => '로그인 성공',
             'data' => [
                 'store_id' => 1,
-                'store_code' => '123456',
+                'store_code' => '123456789',
                 'store_name' => '테스트 판매점',
                 'owner_name' => '테스트 사용자',
                 'grade' => 'B'

@@ -130,7 +130,7 @@ class MockPDOStatement {
                     'created_at' => '2025-05-10 15:30:45',
                     'product_name' => '로또 6/45',
                     'store_name' => '행운복권방',
-                    'store_code' => '123456789',
+                    'store_code' => 'ST12345',
                     'region_name' => '서울',
                     'terminal_code' => 'TR7890'
                 ],
@@ -143,7 +143,7 @@ class MockPDOStatement {
                     'created_at' => '2025-05-11 09:15:22',
                     'product_name' => '로또 6/45',
                     'store_name' => '행운복권방',
-                    'store_code' => '123456789',
+                    'store_code' => 'ST12345',
                     'region_name' => '서울',
                     'terminal_code' => 'TR7890'
                 ]
@@ -232,7 +232,7 @@ class MockPDOStatement {
                     'product_name' => '로또 6/45',
                     'price' => 1000,
                     'store_name' => '행운복권방',
-                    'store_code' => '123456789',
+                    'store_code' => 'ST12345',
                     'terminal_code' => 'TR7890',
                     'cancel_reason' => '고객 요청',
                     'cancel_notes' => '고객이 번호 변경을 원함',
@@ -249,7 +249,7 @@ class MockPDOStatement {
                     'product_name' => '로또 6/45',
                     'price' => 1000,
                     'store_name' => '행운복권방',
-                    'store_code' => '123456789',
+                    'store_code' => 'ST12345',
                     'terminal_code' => 'TR7890',
                     'cancel_reason' => '시스템 오류',
                     'cancel_notes' => '인쇄 오류로 인한 취소',
@@ -287,7 +287,7 @@ class MockPDOStatement {
             return [
                 [
                     'id' => 1,
-                    'store_code' => '100000001',
+                    'store_code' => 'ST001',
                     'store_name' => '행운복권',
                     'business_number' => '123-45-67890',
                     'owner_name' => '홍길동',
@@ -302,7 +302,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 2,
-                    'store_code' => '100000002',
+                    'store_code' => 'ST002',
                     'store_name' => '럭키로또',
                     'business_number' => '234-56-78901',
                     'owner_name' => '김행운',
@@ -317,7 +317,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 3,
-                    'store_code' => '100000003',
+                    'store_code' => 'ST003',
                     'store_name' => '드림복권방',
                     'business_number' => '345-67-89012',
                     'owner_name' => '이꿈나',
@@ -332,7 +332,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 4,
-                    'store_code' => '100000004',
+                    'store_code' => 'ST004',
                     'store_name' => '행복복권센터',
                     'business_number' => '456-78-90123',
                     'owner_name' => '박행복',
@@ -347,7 +347,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 5,
-                    'store_code' => '100000005',
+                    'store_code' => 'ST005',
                     'store_name' => '황금로또',
                     'business_number' => '567-89-01234',
                     'owner_name' => '최황금',
@@ -362,7 +362,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 6,
-                    'store_code' => '100000006',
+                    'store_code' => 'ST006',
                     'store_name' => '스마일복권',
                     'business_number' => '678-90-12345',
                     'owner_name' => '정스마일',
@@ -377,7 +377,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 7,
-                    'store_code' => '100000007',
+                    'store_code' => 'ST007',
                     'store_name' => '해피데이로또',
                     'business_number' => '789-01-23456',
                     'owner_name' => '한해피',
@@ -392,7 +392,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 8,
-                    'store_code' => '100000008',
+                    'store_code' => 'ST008',
                     'store_name' => '부자복권방',
                     'business_number' => '890-12-34567',
                     'owner_name' => '임부자',
@@ -407,7 +407,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 9,
-                    'store_code' => '100000009',
+                    'store_code' => 'ST009',
                     'store_name' => '행운의 티켓',
                     'business_number' => '901-23-45678',
                     'owner_name' => '윤행운',
@@ -422,7 +422,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 10,
-                    'store_code' => '100000010',
+                    'store_code' => 'ST010',
                     'store_name' => '로또 프리미엄',
                     'business_number' => '012-34-56789',
                     'owner_name' => '김프리미엄',
@@ -499,7 +499,7 @@ class MockPDOStatement {
                 'product_name' => '로또 6/45',
                 'product_code' => 'L645',
                 'store_name' => '행운복권방',
-                'store_code' => '123456789',
+                'store_code' => 'ST12345',
                 'region_name' => '서울',
                 'terminal_code' => 'TR7890'
             ];
@@ -521,7 +521,7 @@ class MockPDOStatement {
                 'created_at' => '2025-01-15 10:30:00',
                 'updated_at' => '2025-04-20 14:45:00',
                 'store_name' => '행운복권방',
-                'store_code' => '123456789'
+                'store_code' => 'ST12345'
             ];
         }
         // 기본 빈 데이터
@@ -572,7 +572,7 @@ class MockPDOStatement {
             $stores = [
                 [
                     'id' => 1,
-                    'store_code' => '100000001',
+                    'store_code' => 'ST001',
                     'store_name' => '행운복권',
                     'business_number' => '123-45-67890',
                     'owner_name' => '홍길동',
@@ -587,7 +587,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 2,
-                    'store_code' => '100000002',
+                    'store_code' => 'ST002',
                     'store_name' => '럭키로또',
                     'business_number' => '234-56-78901',
                     'owner_name' => '김행운',
@@ -602,7 +602,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 3,
-                    'store_code' => '100000003',
+                    'store_code' => 'ST003',
                     'store_name' => '드림복권방',
                     'business_number' => '345-67-89012',
                     'owner_name' => '이꿈나',
@@ -617,7 +617,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 4,
-                    'store_code' => '100000004',
+                    'store_code' => 'ST004',
                     'store_name' => '행복복권센터',
                     'business_number' => '456-78-90123',
                     'owner_name' => '박행복',
@@ -632,7 +632,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 5,
-                    'store_code' => '100000005',
+                    'store_code' => 'ST005',
                     'store_name' => '황금로또',
                     'business_number' => '567-89-01234',
                     'owner_name' => '최황금',
@@ -647,7 +647,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 6,
-                    'store_code' => '100000006',
+                    'store_code' => 'ST006',
                     'store_name' => '스마일복권',
                     'business_number' => '678-90-12345',
                     'owner_name' => '정스마일',
@@ -662,7 +662,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 7,
-                    'store_code' => '100000007',
+                    'store_code' => 'ST007',
                     'store_name' => '해피데이로또',
                     'business_number' => '789-01-23456',
                     'owner_name' => '한해피',
@@ -677,7 +677,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 8,
-                    'store_code' => '100000008',
+                    'store_code' => 'ST008',
                     'store_name' => '부자복권방',
                     'business_number' => '890-12-34567',
                     'owner_name' => '임부자',
@@ -692,7 +692,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 9,
-                    'store_code' => '100000009',
+                    'store_code' => 'ST009',
                     'store_name' => '행운의 티켓',
                     'business_number' => '901-23-45678',
                     'owner_name' => '윤행운',
@@ -707,7 +707,7 @@ class MockPDOStatement {
                 ],
                 [
                     'id' => 10,
-                    'store_code' => '100000010',
+                    'store_code' => 'ST010',
                     'store_name' => '로또 프리미엄',
                     'business_number' => '012-34-56789',
                     'owner_name' => '김프리미엄',

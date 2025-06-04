@@ -95,20 +95,20 @@ $recentMaintenanceRequests = [
 
 // 상위 판매 성과 판매점 (Mock 데이터 사용)
 $topPerformingStores = [
-    ['store_code' => 'ST24010032', 'store_name' => '행운복권 강남점', 'region' => '서울', 'sales_amount' => 254780000, 'sales_count' => 12530, 'winning_tickets' => 452],
-    ['store_code' => 'ST24020119', 'store_name' => '럭키복권 명동점', 'region' => '서울', 'sales_amount' => 230150000, 'sales_count' => 11230, 'winning_tickets' => 389],
-    ['store_code' => 'ST24030087', 'store_name' => '로또드림 부산점', 'region' => '부산', 'sales_amount' => 198540000, 'sales_count' => 9765, 'winning_tickets' => 325],
-    ['store_code' => 'ST24040128', 'store_name' => '당첨복권 대구점', 'region' => '대구', 'sales_amount' => 185720000, 'sales_count' => 9150, 'winning_tickets' => 298],
-    ['store_code' => 'ST24050056', 'store_name' => '황금복권 일산점', 'region' => '경기', 'sales_amount' => 178450000, 'sales_count' => 8745, 'winning_tickets' => 276]
+    ['store_code' => '240100032', 'store_name' => '행운복권 강남점', 'region' => '서울', 'sales_amount' => 254780000, 'sales_count' => 12530, 'winning_tickets' => 452],
+    ['store_code' => '240200119', 'store_name' => '럭키복권 명동점', 'region' => '서울', 'sales_amount' => 230150000, 'sales_count' => 11230, 'winning_tickets' => 389],
+    ['store_code' => '240300087', 'store_name' => '로또드림 부산점', 'region' => '부산', 'sales_amount' => 198540000, 'sales_count' => 9765, 'winning_tickets' => 325],
+    ['store_code' => '240400128', 'store_name' => '당첨복권 대구점', 'region' => '대구', 'sales_amount' => 185720000, 'sales_count' => 9150, 'winning_tickets' => 298],
+    ['store_code' => '240500056', 'store_name' => '황금복권 일산점', 'region' => '경기', 'sales_amount' => 178450000, 'sales_count' => 8745, 'winning_tickets' => 276]
 ];
 
 // 계약 만료 예정 판매점 (Mock 데이터 사용)
 $expiringContracts = [
-    ['store_code' => 'ST23050089', 'store_name' => '로또파워 수원점', 'region' => '경기', 'contract_start' => '2023-06-01', 'contract_end' => '2025-05-31', 'days_left' => 13],
-    ['store_code' => 'ST23050102', 'store_name' => '복권나라 안양점', 'region' => '경기', 'contract_start' => '2023-06-01', 'contract_end' => '2025-06-01', 'days_left' => 14],
-    ['store_code' => 'ST23050118', 'store_name' => '행운복권 인천점', 'region' => '인천', 'contract_start' => '2023-06-05', 'contract_end' => '2025-06-05', 'days_left' => 18],
-    ['store_code' => 'ST23050132', 'store_name' => '드림로또 광명점', 'region' => '경기', 'contract_start' => '2023-06-10', 'contract_end' => '2025-06-10', 'days_left' => 23],
-    ['store_code' => 'ST23050178', 'store_name' => '당첨복권 부천점', 'region' => '경기', 'contract_start' => '2023-06-15', 'contract_end' => '2025-06-15', 'days_left' => 28]
+    ['store_code' => '230500089', 'store_name' => '로또파워 수원점', 'region' => '경기', 'contract_start' => '2023-06-01', 'contract_end' => '2025-05-31', 'days_left' => 13],
+    ['store_code' => '230500102', 'store_name' => '복권나라 안양점', 'region' => '경기', 'contract_start' => '2023-06-01', 'contract_end' => '2025-06-01', 'days_left' => 14],
+    ['store_code' => '230500118', 'store_name' => '행운복권 인천점', 'region' => '인천', 'contract_start' => '2023-06-05', 'contract_end' => '2025-06-05', 'days_left' => 18],
+    ['store_code' => '230500132', 'store_name' => '드림로또 광명점', 'region' => '경기', 'contract_start' => '2023-06-10', 'contract_end' => '2025-06-10', 'days_left' => 23],
+    ['store_code' => '230500178', 'store_name' => '당첨복권 부천점', 'region' => '경기', 'contract_start' => '2023-06-15', 'contract_end' => '2025-06-15', 'days_left' => 28]
 ];
 
 // 템플릿 헤더 포함 - 여기서 content-wrapper 클래스를 가진 div가 시작됨

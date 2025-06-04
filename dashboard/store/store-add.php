@@ -220,37 +220,38 @@ function validateStoreData($data) {
  * 고유한 판매점 코드 생성 함수
  * 
  * @param PDO $db 데이터베이스 연결 객체
- * @return string 생성된 판매점 코드
+ * @return string 생성된 판매점 코드 (9자리 숫자)
  */
 function generateStoreCode($db) {
-    $prefix = 'STORE';
     $unique = false;
     $storeCode = '';
     
-    // 단순화된 코드 생성 로직 - MockPDO 환경에서의 안정성을 위해
-    $randomNumber = mt_rand(10000000, 99999999);
-    $storeCode = $prefix . $randomNumber;
-    
-    try {
-        // 코드가 이미 존재하는지 확인 (PDO 스타일)
-        $stmt = $db->prepare("SELECT id FROM stores WHERE store_code = ?");
-        $stmt->bindParam(1, $storeCode);
-        $stmt->execute();
+    while (!$unique) {
+        // 9자리 숫자 생성 (100000000 ~ 999999999)
+        $storeCode = mt_rand(100000000, 999999999);
         
-        // PDO 스타일로 결과 확인
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        
-        // 코드가 이미 존재하면 다시 생성
-        if ($result !== false) {
-            $randomNumber = mt_rand(10000000, 99999999);
-            $storeCode = $prefix . $randomNumber;
+        try {
+            // 코드가 이미 존재하는지 확인 (PDO 스타일)
+            $stmt = $db->prepare("SELECT id FROM stores WHERE store_code = ?");
+            $stmt->bindParam(1, $storeCode);
+            $stmt->execute();
+            
+            // PDO 스타일로 결과 확인
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            // 코드가 존재하지 않으면 unique = true
+            if ($result === false) {
+                $unique = true;
+            }
+        } catch (Exception $e) {
+            // 예외 발생 시 로그 남기고 계속 진행
+            error_log('Error in generateStoreCode: ' . $e->getMessage());
+            // 예외 발생 시에도 생성된 코드 사용
+            $unique = true;
         }
-    } catch (Exception $e) {
-        // 예외 발생 시 기본값 사용
-        error_log('Error in generateStoreCode: ' . $e->getMessage());
     }
     
-    return $storeCode;
+    return (string)$storeCode;
 }
 ?>
 
