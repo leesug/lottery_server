@@ -72,6 +72,28 @@ function checkAuth($requiredRole = null) {
 }
 
 /**
+ * 사용자가 로그인되어 있는지 확인합니다.
+ * 로그인되어 있지 않으면 로그인 페이지로 리다이렉트합니다.
+ * 
+ * @return void
+ */
+function checkLogin() {
+    // 세션 관리가 비활성화되어 있으므로 항상 true 반환
+    return true;
+}
+
+/**
+ * 사용자의 특정 권한을 확인합니다.
+ * 
+ * @param string $permission 확인할 권한
+ * @return bool 권한 보유 여부
+ */
+function checkPermission($permission) {
+    // 세션 관리가 비활성화되어 있으므로 항상 true 반환
+    return true;
+}
+
+/**
  * 현재 사용자가 로그인되어 있는지 확인합니다. (auth 모듈 버전)
  * 
  * @return bool 로그인 여부

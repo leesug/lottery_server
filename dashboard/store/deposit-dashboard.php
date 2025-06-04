@@ -68,17 +68,17 @@ $query = "
         sd.*,
         s.store_name,
         s.store_code,
-        s.region_id,
-        r.region_name,
         sgl.leverage_rate as grade_leverage
     FROM store_deposits sd
     INNER JOIN stores s ON sd.store_id = s.id
-    LEFT JOIN regions r ON s.region_id = r.id
     LEFT JOIN store_grade_leverage sgl ON sd.store_grade = sgl.grade
     $whereClause
     ORDER BY sd.usage_percentage DESC, sd.updated_at DESC
     LIMIT $offset, $perPage
 ";
+
+// 디버깅용 쿼리 출력
+error_log("Deposit Dashboard Query: " . $query);
 
 $stmt = $conn->prepare($query);
 if (!empty($params)) {

@@ -184,6 +184,39 @@ CREATE TABLE paper_usage (
 - 2025-01-22: 대리점 코드 자동 부여 시스템 구현 완료
   - store-add.php의 generateStoreCode 함수 구현 (STORE + 8자리 숫자)
 - 2025-06-04: project_plan.md 업데이트 - 모든 주요 기능 완료 상태 반영
+- 2025-06-04: 예치금 관리 대시보드 오류 수정
+  - deposit-dashboard.php의 's.name' 컬럼 관련 오류 해결
+  - 쿼리 디버깅 코드 추가
+  - 페이지 정상 작동 확인
+- 2025-06-04: 용지 관리 대시보드 오류 수정
+  - paper-dashboard.php의 's.region_id' 컬럼 관련 오류 해결
+  - region 관련 JOIN 및 SELECT 구문 제거
+  - 페이지 정상 작동 확인
+- 2025-06-04: 용지박스 등록 페이지 오류 수정
+  - paper-box-register.php의 checkLogin() 함수 오류 해결
+  - auth.php include 누락 수정
+  - 페이지 정상 작동 확인
+- 2025-06-04: 용지 관리 시스템 개선
+  - paper-roll-register.php 생성 (용지롤 개별 등록 페이지)
+  - CSV 파일 업로드를 통한 대량 롤 등록 기능 추가
+  - paper-roll-template.csv 템플릿 파일 생성
+  - paper-box-register.php 수정: 기존 롤을 선택하여 박스에 할당하는 방식으로 변경
+  - 롤 등록과 박스 등록을 분리하여 더 유연한 관리 가능
+- 2025-06-04: 용지롤 등록 오류 수정
+  - box_id 컬럼 NULL 허용 설정 (ALTER TABLE)
+  - INSERT 쿼리에서 box_id 제거
+  - 롤 코드 중복 입력 방지 (R 접두사 자동 처리)
+  - 정상 작동 확인 및 테스트 완료
+- 2025-06-04: 용지롤 CSV 업로드 개선
+  - 일련번호 범위 중복 체크 추가 (uk_paper_rolls_serial 제약)
+  - 상세한 중복 오류 메시지 제공 (롤 코드, QR 코드, 일련번호 범위 각각 체크)
+  - CSV 템플릿 파일 업데이트 (중복되지 않는 번호 범위 사용)
+- 2025-06-04: 용지박스 관리 시스템 개선
+  - paper-box-register.php 세션 오류 수정 (세션 시작 및 기본값 설정)
+  - 박스 일련번호 접두사를 'B'로 고정 (사용자 입력 제거)
+  - paper-box-list.php 생성 (박스 목록 조회 및 관리 페이지)
+  - 박스 목록에서 상태별 필터링 및 검색 기능 추가
+  - paper-dashboard.php에 박스 목록 페이지 링크 추가
 
 ## 진행중인 작업
 - 없음

@@ -64,8 +64,6 @@ $query = "
         s.id as store_id,
         s.store_name,
         s.store_code,
-        s.region_id,
-        r.region_name,
         pu.id as usage_id,
         pu.roll_id,
         pu.current_serial,
@@ -85,7 +83,6 @@ $query = "
     LEFT JOIN paper_usage pu ON s.id = pu.store_id AND pu.is_active = 1
     LEFT JOIN paper_rolls pr ON pu.roll_id = pr.id
     LEFT JOIN paper_boxes pb ON pr.box_id = pb.id
-    LEFT JOIN regions r ON s.region_id = r.id
     $whereClause
     ORDER BY 
         CASE WHEN pu.id IS NULL THEN 1 ELSE 0 END,
@@ -152,6 +149,9 @@ include_once TEMPLATES_PATH . '/dashboard_header.php';
             </nav>
         </div>
         <div class="col-md-6 text-end">
+            <a href="paper-box-list.php" class="btn btn-info">
+                <i class="fas fa-list"></i> 박스 목록
+            </a>
             <a href="paper-box-register.php" class="btn btn-primary">
                 <i class="fas fa-box"></i> 박스 등록
             </a>
