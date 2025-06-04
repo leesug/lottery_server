@@ -3,6 +3,7 @@
 require_once '../../includes/config.php';
 require_once '../../includes/db.php';
 require_once '../../includes/functions.php';
+require_once '../../includes/auth.php';
 
 // 로그인 체크 (은행 권한 필요)
 checkLogin();
@@ -10,7 +11,7 @@ checkPermission('bank_verification');
 
 // 페이지 제목
 $pageTitle = "당첨 티켓 검증";
-$currentSection = "external";
+$currentSection = "external-monitoring";
 $currentPage = "bank-verification.php";
 
 // 데이터베이스 연결

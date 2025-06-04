@@ -202,7 +202,7 @@ $userRole = "admin";
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?php echo SERVER_URL; ?>/dashboard/sales/status.php" class="nav-link <?php echo ($currentPage === 'status.php' && $currentSection === 'sales') ? 'active' : ''; ?>">
+                                <a href="<?php echo SERVER_URL; ?>/dashboard/sales/sales-status.php" class="nav-link <?php echo ($currentPage === 'sales-status.php') ? 'active' : ''; ?>">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>판매 현황</p>
                                 </a>
@@ -377,6 +377,18 @@ $userRole = "admin";
                                 <a href="<?php echo SERVER_URL; ?>/dashboard/store/store-add.php" class="nav-link <?php echo ($currentPage === 'store-add.php') ? 'active' : ''; ?>">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>판매점 추가</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo SERVER_URL; ?>/dashboard/store/deposit-dashboard.php" class="nav-link <?php echo ($currentPage === 'deposit-dashboard.php') ? 'active' : ''; ?>">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>예치금 관리</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo SERVER_URL; ?>/dashboard/store/paper-dashboard.php" class="nav-link <?php echo ($currentPage === 'paper-dashboard.php') ? 'active' : ''; ?>">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>용지 관리</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -594,6 +606,12 @@ $userRole = "admin";
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a href="<?php echo SERVER_URL; ?>/dashboard/system/deposit-grade-settings.php" class="nav-link <?php echo ($currentPage === 'deposit-grade-settings.php') ? 'active' : ''; ?>">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>등급별 레버리지 설정</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="<?php echo SERVER_URL; ?>/dashboard/system/backup.php" class="nav-link <?php echo ($currentPage === 'backup.php') ? 'active' : ''; ?>">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>백업 및 복원</p>
@@ -756,6 +774,12 @@ $userRole = "admin";
                                 <a href="<?php echo SERVER_URL; ?>/dashboard/external-monitoring/bank/index.php" class="nav-link <?php echo ($currentPage === 'index.php' && $currentSection === 'bank') ? 'active' : ''; ?>">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>은행</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo SERVER_URL; ?>/dashboard/external-monitoring/bank-verification.php" class="nav-link <?php echo ($currentPage === 'bank-verification.php') ? 'active' : ''; ?>">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>은행 당첨확인</p>
                                 </a>
                             </li>
                             <li class="nav-item">
