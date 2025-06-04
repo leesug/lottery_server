@@ -1,0 +1,124 @@
+# Apache 설정 파일
+
+# PHP 오류 표시 (개발 환경에서만 사용)
+php_flag display_errors on
+php_value error_reporting E_ALL
+
+# URL 재작성 모듈 활성화
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /server/
+    
+    # HTTPS로 리디렉션 (실제 서버에서 사용)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    # 존재하지 않는 파일이나 디렉토리에 대한 요청을 처리
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # API 요청 처리
+    RewriteRule ^api/(.*)$ api/index.php?path=$1 [QSA,L]
+    
+    # 페이지 요청 처리
+    # RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
+</IfModule>
+
+# 디렉토리 인덱싱 비활성화
+Options -Indexes
+
+# 기본 문자셋 설정
+AddDefaultCharset UTF-8
+
+# 캐시 제어
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # 이미지
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    
+    # CSS, JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    
+    # 폰트
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    ExpiresByType application/x-font-ttf "access plus 1 year"
+    ExpiresByType font/opentype "access plus 1 year"
+    
+    # 기타
+    ExpiresDefault "access plus 1 week"
+</IfModule>
+
+# GZIP 압축
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/plain
+</IfModule>
+
+# 보안 헤더
+<IfModule mod_headers.c>
+    # XSS 보호
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # MIME 타입 스니핑 방지
+    Header set X-Content-Type-Options "nosniff"
+    
+    # 클릭재킹 방지
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # 참조자 정보 제한
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # 헤더 크기 제한 문제 해결
+    Header unset ETag
+    FileETag None
+</IfModule>
+
+# 기본 문서 설정
+DirectoryIndex index.php
+
+# 디렉토리 인덱싱 비활성화
+Options -Indexes
+
+# PHP 설정
+<IfModule mod_php7.c>
+    # 최대 업로드 크기
+    php_value upload_max_filesize 16M
+    php_value post_max_size 16M
+    
+    # 실행 시간 제한
+    php_value max_execution_time 120
+    php_value max_input_time 120
+    
+    # 메모리 제한
+    php_value memory_limit 128M
+    
+    # 헤더 크기 제한
+    php_value output_buffering On
+</IfModule>
+
+# 헤더 크기 제한 설정 (mod_headers가 활성화된 경우)
+<IfModule mod_headers.c>
+    # 기존 헤더 제거
+    Header unset ETag
+    FileETag None
+    
+    # 최소한의 필수 헤더만 사용
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>

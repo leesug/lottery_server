@@ -1,0 +1,29 @@
+# Logs
+logs/
+*.log
+
+# Vendor
+vendor/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+
+# PHP error logs
+error_log
+php_error.log
+
+# Session files
+sess_*
+
+# Cache
+cache/
